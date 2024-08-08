@@ -69,6 +69,7 @@ const actions = {
   },
 
   async _requestotp ({ commit }, requestbody) {
+    commit('SAVE_MSISDN', requestbody)
     await this.$api
       .$post('/otp', requestbody)
       .then((response) => {
