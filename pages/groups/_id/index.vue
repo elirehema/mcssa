@@ -46,6 +46,9 @@
         <tab-group-account />
       </v-tab-item>
       <v-tab-item>
+        <tab-group-statment />
+      </v-tab-item>
+      <v-tab-item>
         <tab-group-members :members="members" @update="_getGroupMembers($event)" />
       </v-tab-item>
       <v-tab-item>
@@ -68,13 +71,15 @@ import TabGroupAccount from '@/components/tabs/tab_group_account.vue'
 import TabGroupTransactions from '@/components/tabs/tab_group_transactions.vue'
 import TabMemberApprovals from '@/components/tabs/tab_member_requests.vue'
 import TabGroupSettings from '@/components/tabs/tab_group_settings.vue'
+import TabGroupStatment from '@/components/tabs/tab_group_statment.vue'
 export default {
   components: {
     'tab-group-members': TabGroupMembers,
     'tab-group-transactions': TabGroupTransactions,
     'tab-group-account': TabGroupAccount,
     'tab-member-approvals': TabMemberApprovals,
-    'tab-group-settings': TabGroupSettings
+    'tab-group-settings': TabGroupSettings,
+    'tab-group-statment': TabGroupStatment
   },
   data () {
     return {
@@ -86,7 +91,7 @@ export default {
       editedItem: {},
       defaultItem: {},
       paymentref: null,
-      items: ['Account', 'Members', 'Transactions', 'Approval Requests', 'Settings']
+      items: ['Account','Statement', 'Members', 'Transactions', 'Approval Requests', 'Settings']
     }
   },
   head () {
