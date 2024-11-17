@@ -21,14 +21,14 @@
     <template #item.created="{item}">
       <span>{{ item.createdDate | dateformat }}</span>
     </template>
-    <template #item.status="{ item }">
+    <!--<template #item.status="{ item }">
       <v-chip dark class="font-weight-bold" :color="item.status == 'ACTIVE' ? 'green':'success'">
         <v-avatar v-if="item.status == 'ACTIVE'" left>
           <v-icon small>mdi-checkbox-marked-circle</v-icon>
         </v-avatar>
         {{ item.status.toLowerCase() }}
       </v-chip>
-    </template>
+    </template>-->
     <template #no-data>
       <span>No group found ...</span>
     </template>
@@ -53,11 +53,12 @@ export default {
       pages: 0,
       headers: [
         { text: 'Name', value: 'name' },
-        { text: 'Group Type ', value: 'groupType' },
-        { text: 'Location', value: 'location' },
+        { text: 'Role', value: 'role' },
+        { text: 'Group Type ', value: 'type' },
         { text: 'Members', value: 'members' },
-        { text: 'Status ', value: 'status' },
-        { text: 'Created Date', value: 'created' }
+        { text: 'Account ', value: 'groupAccount' },
+        { text: 'Balance', value: 'balance' },
+        { text: 'Share Price', value: 'sharePrice' }
       ],
       show: false,
       editedItem: {}

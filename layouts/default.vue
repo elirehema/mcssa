@@ -21,7 +21,7 @@
             lazy-src="https://myvodacom.vodacom.co.tz/assets/myvodacom/downloadFile/VD-1650X450_VICOBA%201.webp"
             max-height="70"
             max-width="200"
-            src="https://elirehema.github.io/mcapp/mkoba.png"
+            src="m.png"
           />
         </v-list-item>
       </v-list>
@@ -69,7 +69,7 @@
       <nuxt-link to="/">
         <v-avatar size="62">
           <img
-            src="https://elirehema.github.io/mcssa/v.png"
+            src="m.png"
             alt="M-Koba"
           >
         </v-avatar>
@@ -91,17 +91,17 @@
           <v-badge
             bordered
             bottom
-            color="blue lighten-1"
+            color="orange darken-1"
             dot
             offset-x="10"
             offset-y="10"
           >
             <v-avatar
               v-bind="attrs"
-              size="56"
+              size="50"
               v-on="on"
             >
-              <v-img src="https://img.freepik.com/premium-photo/beautiful-arabic-girl-with-scarf-blue-background_21730-3073.jpg?w=2000" />
+              <v-img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" />
             </v-avatar>
           </v-badge>
         </template>
