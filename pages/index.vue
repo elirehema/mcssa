@@ -9,7 +9,7 @@
         color="primary"
       >
         <v-toolbar-title class=" font-weight-medium">
-          MEMBER: {{ member.name }} {{ member.familyName }}
+          MEMBER: {{ member.displayName }}
         </v-toolbar-title>
 
         <v-spacer />
@@ -102,7 +102,7 @@ export default {
   methods: {
     async _getgMemberById () {
       await await this.$api
-        .$get(`/members/${this.msisdn}`)
+        .$get(`/members/${this.msisdn}/self`)
         .then((response) => {
           this.member = response
         })
