@@ -11,12 +11,16 @@
       >
         <template #top>
           <v-toolbar color="" flat>
-            <v-toolbar-title class="text-uppercase">
+           <!-- <v-toolbar-title class="text-uppercase">
               Statment Transactions 
             </v-toolbar-title>
-            <v-spacer />
+            <v-spacer />-->
             <span class="text-h6 font-weight-bold"
               >Opening Balance: {{ openingBalance | currency }}</span
+            >
+            <v-spacer />
+            <span class="text-h6 font-weight-bold"
+              >Bonas: {{ bonus | currency }}</span
             >
             <v-spacer />
             <span class="text-h6 font-weight-bold"

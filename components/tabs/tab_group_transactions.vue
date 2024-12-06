@@ -26,9 +26,17 @@
             <v-spacer />
           </v-toolbar>
         </template>
+        <template #item.msisdn="{item}">
+          <span v-if="item.msisdn != '-1'" >{{ item.msisdn }}</span>
+          <span v-else class="grey--text"> Unknown </span>
+        </template>
         <template #item.type="{item}">
           <span v-if="item.type != null" >{{ item.transactionType.type }}-({{ item.transactionType.flag }})</span>
           <span v-else class="grey--text"> Not Provided </span>
+        </template>
+        <template #item.receipt="{item}">
+          <span v-if="item.receipt != '-1'" >{{ item.receipt }}</span>
+          <span v-else class="grey--text"> Not receipt </span>
         </template>
         <template #item.destination="{item}">
           <span v-if="item.destinationAccount != '-1'">{{ item.destinationAccount }}</span>
@@ -111,8 +119,6 @@ export default {
       pages: 0,
       headers: [
         { text: 'MSISDN', value: 'msisdn' },
-        { text: 'Source ', value: 'sourceAccount' },
-        { text: 'Destination', value: 'destination' },
         { text: 'Amount', value: 'amount' },
         { text: 'Receipt ', value: 'receipt' },
         { text: 'Transaction Type ', value: 'type' },

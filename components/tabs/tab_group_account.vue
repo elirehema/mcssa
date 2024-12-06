@@ -2,7 +2,7 @@
   <v-row v-if="account">
     <v-col cols="8">
       <v-card class="mx-auto" max-width="90%">
-        <v-simple-table dense>
+        <v-simple-table >
           <template #default>
             <tbody>
               <tr>
@@ -13,7 +13,7 @@
                   {{ account.name }}
                 </td>
               </tr>
-              <tr>
+              <!---<tr>
                 <td class="font-weight-bold ">
                   Group ID
                 </td>
@@ -28,7 +28,7 @@
                 <td class="button--text text--darken-3">
                   {{ account.account }}
                 </td>
-              </tr>
+              </tr>-->
               <tr>
                 <td class="font-weight-bold ">
                   Status

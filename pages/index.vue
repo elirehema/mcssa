@@ -84,7 +84,7 @@ export default {
   },
   head () {
     return {
-      title: 'Member'
+      title: 'Home'
     }
   },
   computed: {
