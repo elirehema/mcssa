@@ -15,7 +15,7 @@
             {{ item.status }}
           </v-chip>
         </template>
-        <template #top>
+        <template v-if="false" #top>
           <v-toolbar color="" flat>
             <v-toolbar-title class="text-uppercase">
               Approvals
@@ -40,13 +40,13 @@
             dense
             rounded
           >
-            <v-btn small style="background-color: blue !important; text-transform: none !important;" @click="approveRequest(item, 'approved')">
+            <v-btn disabled small style="background-color: blue !important; text-transform: none !important;" @click="approveRequest(item, 'approved')">
               <v-icon color="white" left>
                 mdi-check
               </v-icon>
               Approve
             </v-btn>
-            <v-btn small v-if="item.status != '-1' && item.status == 'PENDING'" style="background-color: red !important; text-transform: none !important;" @click="approveRequest(item, 'rejected')">
+            <v-btn disabled small v-if="item.status != '-1' && item.status == 'PENDING'" style="background-color: red !important; text-transform: none !important;" @click="approveRequest(item, 'rejected')">
               <v-icon color="white" left>
                 mdi-close
               </v-icon>
@@ -57,6 +57,9 @@
         <template #item.type="{ item }">
           <span v-if="item.transactionType != null"> {{ item.transactionType.type }}</span>
           <span v-else class="grey--text"> Not Provided </span>
+        </template>
+        <template #item.reqdate="{ item }">
+          <span>{{ item.logDate | dateformat }}</span>
         </template>
         <template #no-data>
           <span>No transaction found ...</span>
@@ -73,13 +76,14 @@ export default {
     return {
       approvals: null,
       pages: 0,
+      toggle_exclusive: undefined,
       headers: [
         { text: 'MSISDN', value: 'requestorMsisdn' },
         { text: 'Status ', value: 'status' },
         { text: 'RequestType', value: 'type' },
         { text: 'Description', value: 'desc' },
         { text: 'Confirm Date ', value: 'confirmDate' },
-        { text: 'Request Date', value: 'logDate' },
+        { text: 'Request Date', value: 'reqdate' },
         { text: 'Actions', value: 'actions' }
       ],
       show: false,

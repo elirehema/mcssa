@@ -1,10 +1,10 @@
 <template>
-  <v-card v-if="transaction">
+  <v-card v-if="transaction" :elevation="$vuetify.breakpoint.smAndDown?0:1" >
     <v-app-bar
       fade-img-on-scroll
       elevation="0"
       color="primary"
-      dark
+      dark :tile="$vuetify.breakpoint.smAndDown"
     >
       <v-toolbar-title class="font-weight-medium">
         Transaction: {{ transaction.id }}

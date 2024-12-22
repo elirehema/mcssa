@@ -7,6 +7,7 @@
         class="elevation-1"
         dense
         :footer-props="footerprops"
+         mobile-breakpoint="0"
       >
         <template #top>
           <v-toolbar :extended="$vuetify.breakpoint.mobile" :prominent="$vuetify.breakpoint.mobile" flat>

@@ -140,6 +140,14 @@ th, td {
 table, tr, td {
   border: none !important;
 }
+table thead, tr thead, td thead {
+  background-color: #0caae0;
+  color: white !important;
+}
+table thead th, tr thead th, td thead th {
+  text-decoration-color: white !important;
+  color: white !important;
+}
 
 tr:nth-child(even) {
   background-color: #E0F2F1;

@@ -16,7 +16,7 @@
         @pagination="paginate"
         mobile-breakpoint="0"
       >
-        <template #top>
+        <template v-if="false"  #top>
           <v-toolbar
             color=""
             flat
@@ -33,14 +33,14 @@
         </template>
         <template #item.group="{item}">
           <span v-if="item.group">{{ item.group.name }}</span>
-          <span v-else class="grey--text"> - - - -  </span>
+          <span v-else class="grey--text"> {{ item.groupId }} </span>
         </template>
         <template #item.status="{item}">
           <v-icon v-if="item.status === '0'" color="blue">
             mdi-check-decagram
           </v-icon>
           <v-icon v-else color="red">
-            mdi-close 
+            mdi-close-circle 
           </v-icon>
         </template>
         <template #item.destination="{item}">
@@ -74,6 +74,13 @@
         <template #item.amount="{item}">
           <span >{{ item.amount | currency }}</span>
         </template>
+        <template #item.receipt="{item}">
+          <span v-if="item.receipt != -1">{{ item.receipt }}</span>
+          <span v-else class="grey--text"> No Receipt </span>
+        </template>
+        <template #item.transactionDate="{ item }">
+          {{ item.transactionDate | dateformat }}
+        </template>
         <template #no-data>
           <span>No transaction found ...</span>
         </template>
@@ -96,15 +103,14 @@ export default {
       transactions: null,
       pages: 0,
       headers: [
-        { text: 'MSISDN', value: 'msisdn' },
         { text: 'Group ', value: 'group' },
         { text: 'Destination', value: 'destination' },
         { text: 'Amount', value: 'amount', align:'end' },
         { text: 'Status', value: 'status',align:'center' },
         { text: 'Receipt ', value: 'receipt' },
-        { text: 'Transaction Type ', value: 'type' },
+        { text: 'Type ', value: 'type' },
         { text: 'SMS', value: 'sms' },
-        { text: 'Transaction Date', value: 'transactionDate' }
+        { text: 'Date', value: 'transactionDate' }
 
       ],
       show: false,

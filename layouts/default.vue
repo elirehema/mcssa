@@ -67,7 +67,7 @@
       flat
     >
       <nuxt-link to="/">
-        <v-avatar size="62">
+        <v-avatar size="52">
           <img
             src="m.png"
             alt="M-Koba"
@@ -76,7 +76,7 @@
       </nuxt-link>
 
       <v-spacer />
-      <v-btn fab small class="mr-1" icon>
+      <!--<v-btn fab small class="mr-1" icon>
         <v-icon color="white">
           mdi-help-circle-outline
         </v-icon>
@@ -85,10 +85,8 @@
         <v-icon color="white">
           mdi-bell-badge-outline
         </v-icon>
-      </v-btn>
-      <v-menu transition="slide-y-transition" :rounded="'0'" offset-y>
-        <template #activator="{ on, attrs }">
-          <v-badge
+      </v-btn>-->
+      <v-badge
             bordered
             bottom
             color="orange darken-1"
@@ -97,13 +95,22 @@
             offset-y="10"
           >
             <v-avatar
-              v-bind="attrs"
-              size="50"
-              v-on="on"
+              size="40"
             >
-              <v-img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" />
+              <v-img src="/profile.png" />
             </v-avatar>
           </v-badge>
+      <v-menu transition="slide-y-transition" :rounded="'0'" offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn
+                dark fab  small class="ml-2"
+                v-bind="attrs" outlined
+                color="grey lighten-1"
+                elevation="0"
+                v-on="on"
+              >
+                <v-icon>mdi-dots-vertical</v-icon>
+              </v-btn>
         </template>
         <v-list dense>
           <v-list-item
@@ -123,7 +130,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="ma-2" height="100%" fluid>
+      <v-container class="ma-xs-0 ma-md-2 pa-0 pa-md-2" height="100%" fluid>
         <nuxt />
       </v-container>
     </v-main>

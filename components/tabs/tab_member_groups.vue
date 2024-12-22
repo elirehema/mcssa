@@ -8,7 +8,7 @@
     mobile-breakpoint="0"
     @click:row="rowclick"
   >
-    <template #top>
+    <template v-if="false" #top>
       <v-toolbar
         color=""
         flat

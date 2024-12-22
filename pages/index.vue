@@ -5,11 +5,11 @@
       <v-app-bar
         fade-img-on-scroll
         scroll-threshold="500"
-        dark
+        dark :tile="$vuetify.breakpoint.smAndDown"
         color="primary"
       >
         <v-toolbar-title class=" font-weight-medium">
-          MEMBER: {{ member.displayName }}
+          Welcome, {{ member.displayName }}
         </v-toolbar-title>
 
         <v-spacer />
@@ -30,17 +30,6 @@
           </v-tabs>
         </template>
       </v-app-bar>
-
-      <v-tabs-items v-model="tab">
-        <v-tab-item
-          v-for="item in items"
-          :key="item"
-        >
-          <v-card flat>
-            <v-card-text />
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
       <v-tabs-items v-model="tab">
         <v-tab-item>
           <tab-member-groups :groups="groups" :member="member" />

@@ -3,10 +3,12 @@
     v-if="members"
     :headers="headers"
     :items="members"
+     item-key="msisdn"
     sort-by="calories"
-    class="elevation-1"
+    class="elevation-0"
+     mobile-breakpoint="0"
   >
-    <template #top>
+    <template v-if="false" #top>
       <v-toolbar
         flat
       >
@@ -75,7 +77,7 @@ export default {
       { text: 'Dividends ', value: 'dividend',align:'end' },
       { text: 'Social Fund', value: 'socialfund',align:'end' },
       { text: 'S.F Withdraws', value: 'socialfundWithdraws',align:'end' },
-      { text: 'Created Date', value: 'created' }
+      { text: 'Created Date', value: 'created', align:'center' }
     ]
   }),
   methods: {

@@ -4,9 +4,10 @@
     <v-app-bar
       fade-img-on-scroll dark
       scroll-threshold="500" color="primary"
+      :tile="$vuetify.breakpoint.smAndDown"
     >
-      <v-toolbar-title class=" font-weight-medium">
-        GROUP: {{ group.name }}
+      <v-toolbar-title class=" font-weight-bold">
+         {{ group.name }}
       </v-toolbar-title>
 
       <v-spacer />
@@ -16,6 +17,9 @@
 
       <template #extension>
         <v-tabs
+        dark
+        center-active
+        show-arrows
           v-model="tab"
           align-with-title
         >
@@ -30,17 +34,6 @@
         </v-tabs>
       </template>
     </v-app-bar>
-
-    <v-tabs-items v-model="tab">
-      <v-tab-item
-        v-for="item in items"
-        :key="item"
-      >
-        <v-card flat>
-          <v-card-text />
-        </v-card>
-      </v-tab-item>
-    </v-tabs-items>
     <v-tabs-items v-model="tab">
       <v-tab-item>
         <tab-group-account />

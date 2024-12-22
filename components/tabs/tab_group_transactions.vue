@@ -9,13 +9,14 @@
         :headers="headers"
         :items="transactions"
         item-key="name"
-        class="elevation-1"
+        class="elevation-0"
         :footer-props="footerprops"
         :server-items-length="pages"
         @click:row="rowclick"
         @pagination="paginate"
+         mobile-breakpoint="0"
       >
-        <template #top>
+        <template v-if="false" #top>
           <v-toolbar
             color=""
             flat

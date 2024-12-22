@@ -1,16 +1,19 @@
 <template>
-  <v-form class="form-box" @submit.prevent="formSubmit">
-    <v-container height="100%">
-   
 
-      <div class="d-flex align-center justify-center mt-15">
+    <v-container>
+      <div class="d-flex align-center justify-center">
         <v-row class="mt-0" no-gutters>
-          <v-col cols="12" md="5" class="  d-flex justify-center align-center ">
+          <v-col cols="12" md="5" class="  d-flex justify-center align-center">
             <v-list color="transparent">
               <v-list-item three-line>
                 <v-list-item-content>
-                  <v-list-item-title class="text-sm-h4 text-md-h3 text-lg-h2 font-weight-black red--text text-sm-center text-md-left">
-                    M-Koba
+                  <v-list-item-title class="text-sm-h4 text-md-h3 text-lg-h2 font-weight-black primary--text text-sm-center text-md-left">
+                    <img
+                  src="tcb.png"
+                  alt="homepage"
+                  width="250px"
+                  class="ml-2 dark-logo"
+                >
                   </v-list-item-title>
                   <v-list-item-subtitle class="mt-10 text-sm-caption text-md-caption text-lg-h5 grey--text text-sm-center text-md-left">
                     M-Koba self service web portal
@@ -20,17 +23,18 @@
             </v-list>
           </v-col>
           <v-spacer />
-          <v-col cols="12" md="5" lg="4" class="mt-5 d-flex justify-center">
+          <v-col cols="12" md="5" lg="5" class="mt-5 d-flex justify-center" >
             <v-card class="py-12">
               <v-card-title class="d-flex justify-center">
                 <img
-                  src="@/assets/images/logo.png"
+                  src="tcb.png"
                   alt="homepage"
-                  width="100px"
+                  width="150px"
                   class="ml-2 dark-logo"
                 >
               </v-card-title>
               <v-card-text>
+                <v-form class="form-box" @submit.prevent="formSubmit">
                 <v-row no-gutters class="mt-5">
                   <v-col cols="12" class=" mt-3">
                     <v-text-field
@@ -53,13 +57,14 @@
                   </v-col>
                   <v-col cols="12" />
                 </v-row>
+              </v-form>
               </v-card-text>
             </v-card>
           </v-col>
         </v-row>
       </div>
     </v-container>
-  </v-form>
+
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
