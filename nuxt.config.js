@@ -15,7 +15,7 @@ export default {
     middleware: ['router']
   },
   env: {
-    baseUrl: isDev ? 'http://192.168.1.81:8084/api/v1' : 'https://ibank.tcbbank.co.tz:8443/Savings/portal'
+    baseUrl: isDev ? 'http://192.168.1.81:8084/api/v1' : 'https://eppg.ngazi.co.tz/Savings/portal'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
