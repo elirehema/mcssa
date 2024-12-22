@@ -5,6 +5,7 @@
     :items="groups"
     item-key="name"
     class="elevation-1"
+    mobile-breakpoint="0"
     @click:row="rowclick"
   >
     <template #top>
@@ -57,8 +58,8 @@ export default {
         { text: 'Group Type ', value: 'type' },
         { text: 'Members', value: 'members' },
         { text: 'Account ', value: 'groupAccount' },
-        { text: 'Balance', value: 'balance' },
-        { text: 'Share Price', value: 'sharePrice' }
+        { text: 'Balance', value: 'balance',align:'end' },
+        { text: 'Share Price', value: 'sharePrice',align:'end' }
       ],
       show: false,
       editedItem: {}

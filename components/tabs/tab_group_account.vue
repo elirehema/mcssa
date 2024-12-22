@@ -1,7 +1,7 @@
 <template>
   <v-row v-if="account">
-    <v-col cols="8">
-      <v-card class="mx-auto" max-width="90%">
+    <v-col cols="12" md="8">
+      <v-card class="mx-auto" outlined max-width="90%" elevation="0">
         <v-simple-table >
           <template #default>
             <tbody>
@@ -41,7 +41,7 @@
           </template>
         </v-simple-table>
       </v-card>
-      <v-card class="mx-auto my-5" max-width="90%">
+      <v-card class="mx-auto my-5" elevation="0" outlined max-width="90%">
         <v-simple-table dense>
           <template #default>
             <tbody>

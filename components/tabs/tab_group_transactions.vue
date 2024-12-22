@@ -119,8 +119,8 @@ export default {
       pages: 0,
       headers: [
         { text: 'MSISDN', value: 'msisdn' },
-        { text: 'Amount', value: 'amount' },
-        { text: 'Receipt ', value: 'receipt' },
+        { text: 'Amount', value: 'amount', align: 'end'},
+        { text: 'Receipt ', value: 'receipt',align:'center' },
         { text: 'Transaction Type ', value: 'type' },
         { text: 'SMS', value: 'sms' },
         { text: 'Transaction Date', value: 'transactionDate' }

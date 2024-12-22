@@ -14,6 +14,7 @@
         :server-items-length="pages"
         @click:row="rowclick"
         @pagination="paginate"
+        mobile-breakpoint="0"
       >
         <template #top>
           <v-toolbar
@@ -70,6 +71,9 @@
             <span>{{ item.sms }}</span>
           </v-tooltip>
         </template>
+        <template #item.amount="{item}">
+          <span >{{ item.amount | currency }}</span>
+        </template>
         <template #no-data>
           <span>No transaction found ...</span>
         </template>
@@ -95,8 +99,8 @@ export default {
         { text: 'MSISDN', value: 'msisdn' },
         { text: 'Group ', value: 'group' },
         { text: 'Destination', value: 'destination' },
-        { text: 'Amount', value: 'amount' },
-        { text: 'Status', value: 'status' },
+        { text: 'Amount', value: 'amount', align:'end' },
+        { text: 'Status', value: 'status',align:'center' },
         { text: 'Receipt ', value: 'receipt' },
         { text: 'Transaction Type ', value: 'type' },
         { text: 'SMS', value: 'sms' },

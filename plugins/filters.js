@@ -15,7 +15,7 @@ Vue.filter('currency', function (value) {
 Vue.filter('dateformat', function (value) {
   if (!value) { return '' }
   const date = new Date(value)
-  return date.toDateString() + ' [' + date.toLocaleTimeString('en-TZ') + ']'
+  return date.toDateString() //+ ' [' + date.toLocaleTimeString('en-TZ') + ']'
 })
 Vue.filter('simpledateformat', function (value) {
   if (!value) { return '' }
