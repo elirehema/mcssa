@@ -19,17 +19,15 @@
         <v-spacer />
       </v-toolbar>
     </template>
+    <template #item.balance="{item}">
+      <span>{{ item.balance | currency }}</span>
+    </template>
     <template #item.created="{item}">
       <span>{{ item.createdDate | dateformat }}</span>
     </template>
-    <!--<template #item.status="{ item }">
-      <v-chip dark class="font-weight-bold" :color="item.status == 'ACTIVE' ? 'green':'success'">
-        <v-avatar v-if="item.status == 'ACTIVE'" left>
-          <v-icon small>mdi-checkbox-marked-circle</v-icon>
-        </v-avatar>
-        {{ item.status.toLowerCase() }}
-      </v-chip>
-    </template>-->
+    <template #item.type="{ item }">
+      <span>{{ item.type === 1 ? 'FAMILY':'VIKOBA' }}</span>
+    </template>
     <template #no-data>
       <span>No group found ...</span>
     </template>

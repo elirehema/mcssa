@@ -9,7 +9,7 @@
                 <td class="font-weight-bold ">
                   Group Name
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.name }}
                 </td>
               </tr>
@@ -17,7 +17,7 @@
                 <td class="font-weight-bold ">
                   Status
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.status }}
                 </td>
               </tr>
@@ -25,7 +25,7 @@
                 <td class="text-subtitle-1">
                   Balance
                 </td>
-                <td class="text-body-1 font-weight-bold text--darken-3">
+                <td class="text-body-1 font-weight-bold text--darken-3 text-right">
                   {{ account.balance | currency }}
                 </td>
               </tr>
@@ -33,7 +33,7 @@
                 <td class="text-subtitle-1 ">
                   Deposits
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.deposits |currency }}
                 </td>
               </tr>
@@ -41,7 +41,7 @@
                 <td class="text-subtitle-1">
                   Withdraws
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.withdraws | currency }}
                 </td>
               </tr>
@@ -49,7 +49,7 @@
                 <td class="text-subtitle-1">
                   Penalties
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.penalty | currency}}
                 </td>
               </tr>
@@ -57,7 +57,7 @@
                 <td class="text-subtitle-1">
                   Penalty Paid
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.penaltyPaid | currency }}
                 </td>
               </tr>
@@ -65,23 +65,23 @@
                 <td class="text-subtitle-1">
                   Social Funds
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.socialfund | currency}}
                 </td>
               </tr>
-              <tr>
+              <!--<tr>
                 <td class="text-subtitle-1">
                   Social Funds Withdraws
                 </td>
                 <td class="button--text text--darken-3">
                   {{ account.socialfundWithdraws | currency }}
                 </td>
-              </tr>
+              </tr>-->
               <tr>
                 <td class="text-subtitle-1">
                   Bonus
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.bonus | currency}}
                 </td>
               </tr>
@@ -89,7 +89,7 @@
                 <td class="text-subtitle-1">
                   Dividends
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.dividend | currency}}
                 </td>
               </tr>
@@ -98,7 +98,7 @@
                 <td class="text-subtitle-1">
                   Created date
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.createdDate | dateformat }}
                 </td>
               </tr>

@@ -71,7 +71,6 @@ export default {
       { text: 'Role', value: 'role' },
       { text: 'Status ', value: 'status' },
       { text: 'Deposits ', value: 'deposits',align:'end' },
-      { text: 'Dividends ', value: 'dividend',align:'end' },
       { text: 'Penalty', value: 'penalty',align:'end' },
       { text: 'Withdraws', value: 'withdraws',align:'end' },
       { text: 'Dividends ', value: 'dividend',align:'end' },

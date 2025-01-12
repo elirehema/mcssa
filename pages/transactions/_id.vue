@@ -32,14 +32,14 @@
             <td>Transaction Date</td>
             <td>{{ transaction.transactionDate }}</td>
           </tr>
-          <tr>
+          <!--<tr>
             <td>Source</td>
             <td>{{ transaction.sourceAccount }}</td>
           </tr>
           <tr>
             <td>Destination</td>
             <td>{{ transaction.destinationAccount }}</td>
-          </tr>
+          </tr>-->
           <tr>
             <td>Transaction Amount</td>
             <td>{{ transaction.amount }}</td>
@@ -54,7 +54,7 @@
             <td v-if="transaction.transactionType">{{ transaction.transactionType.flag }}</td>
             <td v-else> <span  class="grey--text"> Not Provided </span></td>
           </tr>
-          <tr>
+          <!--<tr>
             <td>Source Balance Before (S.B.B)</td>
             <td>{{ sanitize(transaction.sourceBalanceBefore) }}</td>
           </tr>
@@ -69,15 +69,15 @@
           <tr>
             <td>Destination Balance After (D.B.A)</td>
             <td>{{ sanitize(transaction.destinationBalanceAfter) }}</td>
-          </tr>
+          </tr>-->
           <tr>
             <td>Status</td>
-            <td>{{ transaction.status }}</td>
+            <td>{{ transaction.status === "0" ? 'SUCCESS':'FAILED'  }}</td>
           </tr>
-          <tr>
+          <!--<tr>
             <td>Descriptions</td>
             <td>{{ transaction.description }}</td>
-          </tr>
+          </tr>-->
           <tr>
             <td>S.M.S</td>
             <td>{{ sanitize(transaction.sms) }}</td>

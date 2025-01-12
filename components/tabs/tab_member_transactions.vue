@@ -104,7 +104,6 @@ export default {
       pages: 0,
       headers: [
         { text: 'Group ', value: 'group' },
-        { text: 'Destination', value: 'destination' },
         { text: 'Amount', value: 'amount', align:'end' },
         { text: 'Status', value: 'status',align:'center' },
         { text: 'Receipt ', value: 'receipt' },
@@ -133,7 +132,7 @@ export default {
     },
 
     async paginate (it) {
-      await this.$api.$get(`/members/${this.msisdn}/transactions`, { params: { page: it.page, size: it.itemsPerPage, sort: 'transate desc' } })
+      await this.$api.$get(`/members/${this.msisdn}/transactions`, { params: { page: it.page, size: it.itemsPerPage, sort: 'transate desc',success: true } })
         .then((response) => {
           this.pages = response.totalRows
           this.page = response.currentPage
