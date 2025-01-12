@@ -32,7 +32,7 @@
           <span v-else class="grey--text"> Unknown </span>
         </template>
         <template #item.type="{item}">
-          <span v-if="item.type != null" >{{ item.transactionType.type }}-({{ item.transactionType.flag }})</span>
+          <span v-if="item.transactionType != null" >{{ item.transactionType.type }}</span>
           <span v-else class="grey--text"> Not Provided </span>
         </template>
         <template #item.receipt="{item}">
