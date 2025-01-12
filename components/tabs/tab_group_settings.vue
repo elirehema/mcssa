@@ -1,9 +1,9 @@
 <template>
-  <v-simple-table v-if="settings">
+  <v-simple-table v-if="settings && groupTypeId != 1">
     <template #default>
       <tbody>
         <tr
-          v-for="setting in settings"
+          v-for="setting in settings.slice(0, 3)"
           :key="setting.title"
         >
           <td class="font-weight-medium">{{ setting.title }}</td>
@@ -16,6 +16,12 @@
 </template>
 <script>
 export default {
+  props:{
+    groupTypeId:{
+      type: Number,
+      default: 1
+    }
+  },
   data () {
     return {
       settings: null

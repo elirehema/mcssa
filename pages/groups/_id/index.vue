@@ -51,7 +51,7 @@
         <tab-member-approvals />
       </v-tab-item>
       <v-tab-item>
-        <tab-group-settings />
+        <tab-group-settings :group-type-id="group.groupType"/>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
