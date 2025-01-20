@@ -1,0 +1,7 @@
+.v-menu__content{
+    & .v-date-picker-header{
+        & .v-btn{
+            background-color: $secondary !important;
+        }
+    }
+}
