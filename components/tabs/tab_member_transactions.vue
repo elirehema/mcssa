@@ -28,7 +28,7 @@
           </v-toolbar>
         </template>
         <template #item.type="{item}">
-          <span v-if="item.transactionType">{{ item.transactionType.type }}-({{ item.transactionType.flag }})</span>
+          <span v-if="item.transactionType">{{ item.transactionType.type }}</span>
           <span v-else class="grey--text"> Not Provided </span>
         </template>
         <template #item.group="{item}">

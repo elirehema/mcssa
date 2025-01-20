@@ -47,8 +47,8 @@ const mutations = {
     state.showLoader = false
   },
   'SAVE_MSISDN' (state, payload) {
-    localStorage.setItem('msisdn', payload.phoneNumber)
-    state.msisdn = payload.phoneNumber
+    localStorage.setItem('msisdn', payload.msisdn)
+    state.msisdn = payload.msisdn
     this.$router.push('/verify')
   }
 }
@@ -73,7 +73,7 @@ const actions = {
     await this.$api
       .$post('/otp', requestbody)
       .then((response) => {
-        commit('SAVE_MSISDN', requestbody)
+        commit('SAVE_MSISDN', response)
       })
       .catch(() => {
         commit('UPDATPASSWORD_ERROR')

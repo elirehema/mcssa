@@ -22,6 +22,9 @@
     <template #item.balance="{item}">
       <span>{{ item.balance | currency }}</span>
     </template>
+    <template #item.sharePrice="{item}">
+      <span>{{ item.sharePrice | currency }}</span>
+    </template>
     <template #item.created="{item}">
       <span>{{ item.createdDate | dateformat }}</span>
     </template>

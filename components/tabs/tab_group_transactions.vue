@@ -70,6 +70,9 @@
         <template #no-data>
           <span>No organization found ...</span>
         </template>
+        <template #item.amount="{item}">
+          <span>{{ item.amount | currency }}</span>
+        </template>
         <template v-if="false" #footer>
           <v-simple-table style="background-color: #eeeeee;" dark>
             <tbody>

@@ -10,7 +10,7 @@
          mobile-breakpoint="0"
       >
         <template #top>
-          <v-toolbar :extended="$vuetify.breakpoint.mobile" :prominent="$vuetify.breakpoint.mobile" flat>
+          <v-toolbar :extended="$vuetify.breakpoint.mobile" :prominent="$vuetify.breakpoint.mobile" flat color="grey">
            <v-row class="d-flex justify-space-between"  no-gutters>
             <v-col cols="12" xs="12" sm="6" md="3" lg="3">
               <span class="text-h6 font-weight-bold">Opening Balance: {{ openingBalance | currency }}</span>
@@ -21,15 +21,13 @@
             >
             </v-col>
             
-            <v-col cols="12" xs="12" sm="6" md="2" >
+            <v-col cols="12" xs="12" sm="5" md="2" >
               <v-menu
                 ref="startDateMenu"
                 v-model="startDateMenu"
                 :close-on-content-click="false"
-                :return-value.sync="startDate"
                 transition="scale-transition"
                 offset-y
-                absolute
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-text-field
@@ -37,7 +35,7 @@
                     label="Start date"
                     hint="Start date"
                     prepend-inner-icon="mdi-calendar"
-                    readonly filled
+                    readonly
                     v-bind="attrs"
                     v-on="on"
                     single-line
@@ -56,28 +54,20 @@
                   header-color="white"
                   color="indigo lighten-1"
                   class="pa-2"
+                  @input="startDateMenu = false"
                   :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10)"
                 >
-                  <v-spacer></v-spacer>
-                  <v-btn dark color="blue" small @click="startDateMenu = false">
-                    <v-icon>mdi-close</v-icon>
-                    Cancel
-                  </v-btn>
-                  <v-btn color="primary" @click="$refs.startDateMenu.save(startDate)" small>
-                    <v-icon left>mdi-filter-variant</v-icon> Apply </v-btn>
                 </v-date-picker>
-                <v-spacer></v-spacer>
               </v-menu>
             </v-col>
-            <v-col cols="12" xs="12" sm="6" md="2" v-if="startDate" >
+            <v-col cols="12" xs="12" sm="5" md="2" >
               <v-menu
                 ref="endDateMenu"
                 v-model="endDateMenu"
                 :close-on-content-click="false"
-                :return-value.sync="endDate"
                 transition="scale-transition"
                 offset-y
-                absolute
+                
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-text-field
@@ -85,7 +75,7 @@
                     label="End date"
                     hint="End date"
                     prepend-inner-icon="mdi-calendar"
-                    readonly filled
+                    readonly
                     v-bind="attrs"
                     v-on="on"
                     single-line
@@ -104,19 +94,15 @@
                   header-color="white"
                   color="indigo lighten-1"
                   class="pa-2"
-                  :allowed-dates="allowedDates",
+                  @input="endDateMenu = false"
+                  :allowed-dates="allowedDates"
                    :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10)"
                 >
-                  <v-spacer></v-spacer>
-                  <v-btn dark color="blue" small @click="endDateMenu = false">
-                    <v-icon>mdi-close</v-icon>
-                    Cancel
-                  </v-btn>
-                  <v-btn color="primary" @click="$refs.endDateMenu.save(endDate)" small>
-                    <v-icon left>mdi-filter-variant</v-icon> Apply </v-btn>
                 </v-date-picker>
-                <v-spacer></v-spacer>
               </v-menu>
+            </v-col>
+            <v-col cols="12" xs="12" sm="1" md="1">
+              <v-btn fab small elevation="0" color="success" @click="paginate()"><v-icon>mdi-magnify</v-icon></v-btn>
             </v-col>
           </v-row>
           </v-toolbar>
@@ -152,7 +138,6 @@ export default {
       transactions: null,
       openingBalance: 0,
       closingBalance: 0,
-      //max: new Date(Date.now()).toISOString().substr(0, 10),
       startDate:  new Date(Date.now() - 86400000).toISOString().substr(0, 10),
       endDate: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10),
       dates: [
@@ -180,7 +165,7 @@ export default {
     };
   },
   created() {
-    this.paginate({ page: 0, itemsPerPage: 15 });
+    this.paginate();
   },
   computed:{
     min(){
@@ -202,7 +187,7 @@ export default {
     },
    
 
-    async paginate(it) {
+    async paginate() {
       await this.$api
         .$post(`/groups/statment`, {
           startDate: this.startDate,

@@ -21,7 +21,7 @@
           </v-toolbar>
         </template>
         <template #item.type="{ item }">
-          <span>{{ item.transactionType.type }}-({{ item.transactionType.flag }})</span>
+          <span>{{ item.transactionType.type }}</span>
         </template>
         <template #item.destination="{ item }">
           <span v-if="item.destinationAccount != '-1'">{{

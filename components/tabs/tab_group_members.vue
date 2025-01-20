@@ -42,6 +42,24 @@
     <template #item.created="{item}">
       <span>{{ item.createdDate | dateformat }}</span>
     </template>
+    <template #item.deposits="{item}">
+      <span>{{ item.deposits | currency }}</span>
+    </template>
+    <template #item.penalty="{item}">
+      <span>{{ item.penalty | currency }}</span>
+    </template>
+    <template #item.withdraws="{item}">
+      <span>{{ item.withdraws | currency }}</span>
+    </template>
+    <template #item.dividend="{item}">
+      <span>{{ item.dividend | currency }}</span>
+    </template>
+    <template #item.socialfund="{item}">
+      <span>{{ item.socialfund | currency }}</span>
+    </template>
+    <template #item.socialfundWithdraws="{item}">
+      <span>{{ item.socialfundWithdraws | currency }}</span>
+    </template>
     <template #item.status="{ item }">
       <v-chip dark small :color="item.status == 'ACTIVE' ? 'green':'success'">
         <v-avatar v-if="item.status == 'ACTIVE'" left>
@@ -70,7 +88,7 @@ export default {
       { text: 'MSISDN ', value: 'msisdn' },
       { text: 'Role', value: 'role' },
       { text: 'Status ', value: 'status' },
-      { text: 'Deposits ', value: 'deposits',align:'end' },
+      { text: 'Deposits ', value: 'deposits',align:'end',},
       { text: 'Penalty', value: 'penalty',align:'end' },
       { text: 'Withdraws', value: 'withdraws',align:'end' },
       { text: 'Dividends ', value: 'dividend',align:'end' },

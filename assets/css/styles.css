@@ -141,7 +141,7 @@ table, tr, td {
   border: none !important;
 }
 table thead, tr thead, td thead {
-  background-color: #0caae0;
+  background-color: #208565;
   color: white !important;
 }
 table thead th, tr thead th, td thead th {
@@ -156,4 +156,8 @@ tr:nth-child(even) {
 .v-input.search {
   max-width: 500px !important;
   align-content: flex-start !important;
+}
+
+.v-menu__content .v-date-picker-header .v-btn {
+  background-color: #208565 !important;
 }/*# sourceMappingURL=styles.css.map */
