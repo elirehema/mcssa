@@ -81,7 +81,7 @@ export default {
     }
   },
   created () {
-    this.paginate({ page: 0, itemsPerPage: 15 })
+    this.paginate({ page: 0, itemsPerPage: 10 })
   },
   methods: {
     rowclick (v) {

@@ -96,7 +96,7 @@ export default {
     }
   },
   created () {
-    this.paginate({ page: 0, itemsPerPage: 15 })
+    this.paginate({ page: 0, itemsPerPage: 10 })
   },
   methods: {
     rowclick (v) {
@@ -127,7 +127,7 @@ export default {
       await this.$api
         .$put(`/members/approvals/${val.id}`, null, { params: { action: act } })
         .then(() => {
-          this.paginate({ page: 0, itemsPerPage: 15 })
+          this.paginate({ page: 0, itemsPerPage: 10 })
         })
         .catch((_err) => {})
     }
