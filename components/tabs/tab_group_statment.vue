@@ -6,22 +6,23 @@
         item-key="name"
         class="elevation-1"
         dense
+        :loading="loading"
         :footer-props="footerprops"
          mobile-breakpoint="0"
       >
         <template #top>
-          <v-toolbar :extended="$vuetify.breakpoint.mobile" :prominent="$vuetify.breakpoint.mobile" flat color="grey">
-           <v-row class="d-flex justify-space-between"  no-gutters>
-            <v-col cols="12" xs="12" sm="6" md="3" lg="3">
+          <v-toolbar :extended="$vuetify.breakpoint.mobile" :prominent="$vuetify.breakpoint.mobile" flat >
+           <v-row class="d-flex justify-space-around"  no-gutters>
+            <v-col cols="12" xs="5" sm="5" md="3" lg="3">
               <span class="text-h6 font-weight-bold">Opening Balance: {{ openingBalance | currency }}</span>
             </v-col>
-            <v-col cols="12" xs="12" sm="6" md="3" lg="3" :class="$vuetify.breakpoint.xsAndDown ? 'mt-4':''" >
+            <v-col cols="12" xs="5" sm="5" md="3" lg="3" :class="$vuetify.breakpoint.xsAndDown ? 'mt-4':''" >
             <span class="text-h6 font-weight-bold"
               >Closing Balance: {{ closingBalance | currency }}</span
             >
             </v-col>
             
-            <v-col cols="12" xs="12" sm="5" md="2" >
+            <v-col cols="12" xs="12" sm="12" md="2" >
               <v-menu
                 ref="startDateMenu"
                 v-model="startDateMenu"
@@ -54,13 +55,14 @@
                   header-color="white"
                   color="indigo lighten-1"
                   class="pa-2"
+                  @change="paginate"
                   @input="startDateMenu = false"
                   :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10)"
                 >
                 </v-date-picker>
               </v-menu>
             </v-col>
-            <v-col cols="12" xs="12" sm="5" md="2" >
+            <v-col cols="12" xs="12" sm="12" md="2" >
               <v-menu
                 ref="endDateMenu"
                 v-model="endDateMenu"
@@ -94,6 +96,7 @@
                   header-color="white"
                   color="indigo lighten-1"
                   class="pa-2"
+                   @change="paginate"
                   @input="endDateMenu = false"
                   :allowed-dates="allowedDates"
                    :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10)"
@@ -101,9 +104,9 @@
                 </v-date-picker>
               </v-menu>
             </v-col>
-            <v-col cols="12" xs="12" sm="1" md="1">
-              <v-btn fab small elevation="0" color="success" @click="paginate()"><v-icon>mdi-magnify</v-icon></v-btn>
-            </v-col>
+            <!--<v-col cols="12" xs="12" sm="12" md="1">
+              <v-btn block  small elevation="0" color="success" @click="paginate()"><v-icon left>mdi-magnify</v-icon> Filter results</v-btn>
+            </v-col>-->
           </v-row>
           </v-toolbar>
         </template>
@@ -135,6 +138,7 @@ export default {
       startDateMenu: false,
       endDateMenu: false,
       modal: false,
+      loading: false,
       transactions: null,
       openingBalance: 0,
       closingBalance: 0,
@@ -188,6 +192,7 @@ export default {
    
 
     async paginate() {
+      this.loading = true;
       await this.$api
         .$post(`/groups/statment`, {
           startDate: this.startDate,
@@ -199,12 +204,14 @@ export default {
           this.closingBalance = response.response.closeBalance.trim().length === 0 ? "0.0" :  response.response.closeBalance;
           this.startDateMenu = false;
           this.modal = false;
+          this.loading = false;
           this.transactions =
             response.response.transactions == null
               ? []
               : response.response.transactions;
         })
         .catch((_err) => {
+          this.loading = false;
           this.startDateMenu = false;
           this.modal = false;
         });
