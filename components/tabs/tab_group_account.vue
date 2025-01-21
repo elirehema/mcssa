@@ -41,7 +41,7 @@
                 <td class="text-subtitle-1">
                   Repayment
                 </td>
-                <td class="button--text text--darken-3">
+                <td class="button--text text--darken-3 text-right">
                   {{ account.repayment | currency }}
                 </td>
               </tr>
