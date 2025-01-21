@@ -3,12 +3,17 @@
     <v-container height="100%">
       <div class="d-flex align-center justify-center mt-15">
         <v-row class="mt-0" no-gutters>
-          <v-col cols="12" md="5" class="  d-flex justify-center align-center ">
+          <v-col cols="12" md="5" class="  d-flex justify-center align-center">
             <v-list color="transparent">
               <v-list-item three-line>
                 <v-list-item-content>
-                  <v-list-item-title class="text-sm-h4 text-md-h3 text-lg-h2 font-weight-black red--text text-sm-center text-md-left">
-                    M-Koba
+                  <v-list-item-title class="text-sm-h4 text-md-h3 text-lg-h2 font-weight-black primary--text text-sm-center text-md-left">
+                    <img
+                  src="tcb.png"
+                  alt="homepage"
+                  width="250px"
+                  class="ml-2 dark-logo"
+                >
                   </v-list-item-title>
                   <v-list-item-subtitle class="mt-10 text-sm-caption text-md-caption text-lg-h5 grey--text text-sm-center text-md-left">
                     M-Koba self service web portal
@@ -22,7 +27,7 @@
             <v-card class="py-12">
               <v-card-title class="d-flex justify-center">
                 <img
-                  src="@/assets/images/logo.png"
+                 src="tcb.png"
                   alt="homepage"
                   width="100px"
                   class="ml-2 dark-logo"
