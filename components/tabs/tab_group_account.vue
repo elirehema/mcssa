@@ -39,6 +39,14 @@
               </tr>
               <tr>
                 <td class="text-subtitle-1">
+                  Repayment
+                </td>
+                <td class="button--text text--darken-3">
+                  {{ account.repayment | currency }}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-subtitle-1">
                   Withdraws
                 </td>
                 <td class="button--text text--darken-3 text-right">
@@ -69,14 +77,7 @@
                   {{ account.socialfund | currency}}
                 </td>
               </tr>
-              <!--<tr>
-                <td class="text-subtitle-1">
-                  Social Funds Withdraws
-                </td>
-                <td class="button--text text--darken-3">
-                  {{ account.socialfundWithdraws | currency }}
-                </td>
-              </tr>-->
+              
               <tr>
                 <td class="text-subtitle-1">
                   Bonus
