@@ -83,8 +83,7 @@ export default {
         { text: 'RequestType', value: 'type' },
         { text: 'Description', value: 'desc' },
         { text: 'Confirm Date ', value: 'confirmDate' },
-        { text: 'Request Date', value: 'reqdate' },
-        { text: 'Actions', value: 'actions' }
+        { text: 'Request Date', value: 'reqdate' }
       ],
       show: false,
       editedItem: {}

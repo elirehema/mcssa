@@ -84,7 +84,7 @@ export default {
       editedItem: {},
       defaultItem: {},
       paymentref: null,
-      items: ['Account','Statement', 'Members', 'Transactions', 'Approval Requests', 'Settings']
+      items: ['Account','Statement', 'Members', 'Transactions', 'Requests', 'Settings']
     }
   },
   head () {
