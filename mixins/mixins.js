@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import {  mapGetters } from 'vuex'
+
 const mixins = {
   components: {
     'skeleton-table-loader': () => import('~/components/loaders/skeleton-table-loader.vue'),
@@ -15,7 +17,7 @@ const mixins = {
   },
   methods: {},
   computed: {
-
+    ...mapGetters(['isAuthenticated']),
     msisdn () {
       return localStorage.getItem('msisdn')
     }

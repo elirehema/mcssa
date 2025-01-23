@@ -90,7 +90,7 @@ const getters = {
   },
   accessToken: function (state) { return state.accessToken },
   isAuthenticated: function (state) {
-    return localStorage.getItem('accessToken') !== undefined
+    return state.isAuthenticated;
   }
 
 }
