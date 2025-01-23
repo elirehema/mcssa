@@ -34,7 +34,9 @@
                 >
               </v-card-title>
               <v-card-text>
-                <v-form class="form-box" @submit.prevent="formSubmit">
+                <v-form  ref="form"
+    v-model="valid"
+    lazy-validation class="form-box" @submit.prevent="formSubmit">
                 <v-row no-gutters class="mt-5">
                   <v-col cols="12" class=" mt-3">
                     <v-text-field
@@ -42,6 +44,7 @@
                       color="black"
                       class=" px-3 form-input"
                       outlined
+                      :rules="msisdnRules"
                       placeholder="e.g 255716000000"
                       label="Phone Number"
                       required
@@ -73,10 +76,14 @@ export default {
   layout: 'login',
   data () {
     return {
+      valid: true,
       form: {
         phoneNumber: null
       },
-
+      msisdnRules: [
+        v => !!v || 'Phone Number is required',
+        v => (v && v.length >= 10) || 'Phone Number must be not less than 10 characters',
+      ],
       title: 'Market Grid : Login'
     }
   },
@@ -101,7 +108,9 @@ export default {
     ...mapActions(['login']),
 
     formSubmit () {
+      if(this.$refs.form.validate()){
       this.$store.dispatch('_requestotp', this.form)
+      }
     }
   }
 
