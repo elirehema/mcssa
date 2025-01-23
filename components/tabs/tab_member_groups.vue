@@ -60,7 +60,6 @@ export default {
         { text: 'Members', value: 'members' },
         { text: 'Account ', value: 'groupAccount' },
         { text: 'Balance', value: 'balance',align:'end' },
-        { text: 'Share Price', value: 'sharePrice',align:'end' }
       ],
       show: false,
       editedItem: {}
