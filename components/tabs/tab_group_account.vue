@@ -14,6 +14,14 @@
                   {{ account.status }}
                 </td>
               </tr>
+              <tr>
+                <td class="text-subtitle-1">
+                  Created date
+                </td>
+                <td class=" text--darken-3 text-right">
+                  {{ account.createdDate | dateformat }}
+                </td>
+              </tr>
     
               <tr>
                 <td v-if="group.groupType === 2" class="text-subtitle-1 ">
