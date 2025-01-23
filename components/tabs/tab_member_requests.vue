@@ -80,7 +80,6 @@ export default {
       headers: [
         { text: 'MSISDN', value: 'requestorMsisdn' },
         { text: 'Status ', value: 'status' },
-        { text: 'RequestType', value: 'type' },
         { text: 'Description', value: 'desc' },
         { text: 'Confirm Date ', value: 'confirmDate' },
         { text: 'Request Date', value: 'reqdate' }
