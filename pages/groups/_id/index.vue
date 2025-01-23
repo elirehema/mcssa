@@ -6,7 +6,7 @@
       scroll-threshold="500" color="primary"
       :tile="$vuetify.breakpoint.smAndDown"
     >
-      <v-toolbar-title class=" font-weight-bold">
+      <v-toolbar-title class="text-h5 font-weight-bold">
          {{ group.name }}
       </v-toolbar-title>
 
@@ -36,7 +36,7 @@
     </v-app-bar>
     <v-tabs-items v-model="tab">
       <v-tab-item>
-        <tab-group-account />
+        <tab-group-account :group="group" />
       </v-tab-item>
       <v-tab-item>
         <tab-group-statment />

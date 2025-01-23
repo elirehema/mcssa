@@ -9,7 +9,7 @@
         color="primary"
       >
         <v-toolbar-title class=" font-weight-medium">
-          Welcome, {{ member.displayName }}
+          WELCOME, {{ member.displayName }} !
         </v-toolbar-title>
 
         <v-spacer />

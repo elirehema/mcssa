@@ -5,35 +5,21 @@
         <v-simple-table>
           <template #default>
             <tbody>
-              <tr>
-                <td class="font-weight-bold ">
-                  Group Name
-                </td>
-                <td class="button--text text--darken-3 text-right">
-                  {{ account.name }}
-                </td>
-              </tr>
+              
               <tr>
                 <td class="font-weight-bold ">
                   Status
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.status }}
                 </td>
               </tr>
-              <tr>
-                <td class="text-subtitle-1">
-                  Balance
-                </td>
-                <td class="text-body-1 font-weight-bold text--darken-3 text-right">
-                  {{ account.balance | currency }}
-                </td>
-              </tr>
+    
               <tr>
                 <td class="text-subtitle-1 ">
-                  Deposits
+                  Deposits/Share
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.deposits |currency }}
                 </td>
               </tr>
@@ -41,7 +27,7 @@
                 <td class="text-subtitle-1">
                   Repayment
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.repayment | currency }}
                 </td>
               </tr>
@@ -49,7 +35,7 @@
                 <td class="text-subtitle-1">
                   Withdraws
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.withdraws | currency }}
                 </td>
               </tr>
@@ -57,7 +43,7 @@
                 <td class="text-subtitle-1">
                   Penalties
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.penalty | currency}}
                 </td>
               </tr>
@@ -65,24 +51,24 @@
                 <td class="text-subtitle-1">
                   Penalty Paid
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.penaltyPaid | currency }}
                 </td>
               </tr>
               <tr>
                 <td class="text-subtitle-1">
                   Social Funds
-                </td>
-                <td class="button--text text--darken-3 text-right">
+                </td> 
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.socialfund | currency}}
                 </td>
               </tr>
-              
+             
               <tr>
                 <td class="text-subtitle-1">
                   Bonus
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.bonus | currency}}
                 </td>
               </tr>
@@ -90,17 +76,46 @@
                 <td class="text-subtitle-1">
                   Dividends
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.dividend | currency}}
                 </td>
               </tr>
 
-              <tr>
+             <!-- <tr>
                 <td class="text-subtitle-1">
                   Created date
                 </td>
-                <td class="button--text text--darken-3 text-right">
+                <td class="text-h6 text--darken-3 text-right">
                   {{ account.createdDate | dateformat }}
+                </td>
+              </tr>-->
+             
+             
+              <tr>
+                <td class="text-subtitle-1">
+                  Available Share Balance
+                </td>
+                <td class="text-h6 text--darken-3 text-right" v-if="group.groupType === 2">
+                  {{ (account.balance - account.socialfund) | currency }}
+                </td>
+                <td class="text-h6 text--darken-3 text-right" v-else>
+                  {{ account.balance | currency }}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-subtitle-1">
+                  Social Funds Balance
+                </td> 
+                <td class="text-h6 text--darken-3 text-right">
+                  {{ account.socialfund | currency}}
+                </td>
+              </tr>
+              <tr>
+                <td class="text-subtitle-1">
+                  Overall Balance
+                </td>
+                <td class="text-h6 text--darken-3 text-right">
+                  {{ account.balance | currency }}
                 </td>
               </tr>
             </tbody>
@@ -113,6 +128,12 @@
 </template>
 <script>
 export default {
+  props:{
+    group:{
+      type: Object,
+      default: null
+    }
+  },
   data () {
     return {
       account: null
