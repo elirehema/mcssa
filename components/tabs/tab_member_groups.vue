@@ -59,7 +59,7 @@ export default {
         { text: 'Group Type ', value: 'type' },
         { text: 'Members', value: 'members' },
         { text: 'Account ', value: 'groupAccount' },
-        { text: 'Balance', value: 'balance',align:'end' },
+        { text: 'Balance', value: 'balance'},
       ],
       show: false,
       editedItem: {}
