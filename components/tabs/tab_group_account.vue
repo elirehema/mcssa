@@ -16,14 +16,17 @@
               </tr>
     
               <tr>
-                <td class="text-subtitle-1 ">
+                <td v-if="group.groupType === 2" class="text-subtitle-1 ">
                   Deposits/Share
+                </td>
+                <td v-else>
+                  Deposits
                 </td>
                 <td class="text-h6 text--darken-3 text-right">
                   {{ account.deposits |currency }}
                 </td>
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Repayments
                 </td>
@@ -39,7 +42,7 @@
                   {{ account.withdraws | currency }}
                 </td>
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Penalties
                 </td>
@@ -47,7 +50,7 @@
                   {{ account.penalty | currency}}
                 </td>
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Penalty Paid
                 </td>
@@ -55,7 +58,7 @@
                   {{ account.penaltyPaid | currency }}
                 </td>
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Social Funds
                 </td> 
@@ -72,7 +75,7 @@
                   {{ account.bonus | currency}}
                 </td>
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Dividends
                 </td>
@@ -100,7 +103,7 @@
                 </td>
                 
               </tr>
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Social Funds Balance
                 </td> 
