@@ -32,7 +32,7 @@ const mutations = {
     sessionStorage.clear()
     this.$router.push('/signin')
     state.msisdn = null
-    state.authenticated = false
+    state.isAuthenticated = false
     // window.location.reload(true)
   },
 
