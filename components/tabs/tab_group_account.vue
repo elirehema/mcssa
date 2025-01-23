@@ -91,16 +91,14 @@
               </tr>-->
              
              
-              <tr>
+              <tr v-if="group.groupType === 2">
                 <td class="text-subtitle-1">
                   Available Share Balance
                 </td>
-                <td class="text-h6 text--darken-3 text-right" v-if="group.groupType === 2">
-                  {{ (account.balance - account.socialfund) | currency }}
+                <td class="text-h6 text--darken-3 text-right" >
+                  {{ (account.balance - account.socialfund - account.penaltyPaid - account.bonus) | currency }}
                 </td>
-                <td class="text-h6 text--darken-3 text-right" v-else>
-                  {{ account.balance | currency }}
-                </td>
+                
               </tr>
               <tr>
                 <td class="text-subtitle-1">
