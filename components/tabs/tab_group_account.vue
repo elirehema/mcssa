@@ -10,7 +10,7 @@
                 <td class="font-weight-bold ">
                   Status
                 </td>
-                <td class="text-h6 text--darken-3 text-right">
+                <td class="text--darken-3 text-right">
                   {{ account.status }}
                 </td>
               </tr>
