@@ -82,6 +82,7 @@ export default {
       },
       msisdnRules: [
         v => !!v || 'Phone Number is required',
+        v => (v && v.match(/^(0|255)(?!0)\d*$/)) || 'Phone Number must be numeric and starts with either 0 or 255 ',
         v => (v && v.length >= 10) || 'Phone Number must be not less than 10 characters',
       ],
       title: 'Market Grid : Login'
