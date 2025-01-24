@@ -50,6 +50,7 @@
                         v-model="form.otp"
                         :disabled="loading"
                         length="4"
+                        type="number"
                         @finish="onFinish"
                       />
                       <v-overlay absolute :value="loading">
