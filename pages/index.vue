@@ -76,6 +76,11 @@ export default {
       title: 'Home'
     }
   },
+  created(){
+    if(!this.isauthenticated){
+      this.$store.dispatch('_logoutsession');
+    }
+  },
   computed: {
     ...mapGetters({
       isauthenticated: 'isAuthenticated'
